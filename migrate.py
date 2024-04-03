@@ -64,7 +64,7 @@ count INTEGER NOT NULL,
 CONSTRAINT FK_link_order_product FOREIGN KEY(order_id)
 REFERENCES ordert(id),
 
-CONSTRAINT FK_link_product_rack FOREIGN KEY(product_id)
+CONSTRAINT FK_link_product_order FOREIGN KEY(product_id)
 REFERENCES product(id)
 )
 """
@@ -79,5 +79,5 @@ def migrate() -> None:
     execute_command(rack_product_link_create)
 
 
-if __name__ == "main":
+if __name__ == "__main__":
     migrate()
